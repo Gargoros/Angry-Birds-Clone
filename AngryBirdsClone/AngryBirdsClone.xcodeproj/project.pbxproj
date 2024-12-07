@@ -14,6 +14,9 @@
 		8C9D4A812D044311008E30E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8C9D4A802D044311008E30E3 /* Base */; };
 		8C9D4A832D044313008E30E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C9D4A822D044313008E30E3 /* Assets.xcassets */; };
 		8C9D4A862D044313008E30E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8C9D4A852D044313008E30E3 /* Base */; };
+		8C9D4A8E2D044638008E30E3 /* BirdTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C9D4A8D2D044638008E30E3 /* BirdTileSet.sks */; };
+		8C9D4A972D04510C008E30E3 /* GameCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D4A962D04510C008E30E3 /* GameCamera.swift */; };
+		8C9D4A992D045B5C008E30E3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D4A982D045B5C008E30E3 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +28,10 @@
 		8C9D4A802D044311008E30E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C9D4A822D044313008E30E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C9D4A852D044313008E30E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8C9D4A8C2D04433A008E30E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8C9D4A8C2D04433A008E30E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = AngryBirdsClone/Template/Info.plist; sourceTree = SOURCE_ROOT; };
+		8C9D4A8D2D044638008E30E3 /* BirdTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BirdTileSet.sks; sourceTree = "<group>"; };
+		8C9D4A962D04510C008E30E3 /* GameCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCamera.swift; sourceTree = "<group>"; };
+		8C9D4A982D045B5C008E30E3 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +64,67 @@
 		8C9D4A742D044311008E30E3 /* AngryBirdsClone */ = {
 			isa = PBXGroup;
 			children = (
-				8C9D4A8C2D04433A008E30E3 /* Info.plist */,
-				8C9D4A752D044311008E30E3 /* AppDelegate.swift */,
-				8C9D4A772D044311008E30E3 /* GameScene.sks */,
-				8C9D4A7B2D044311008E30E3 /* GameScene.swift */,
-				8C9D4A7D2D044311008E30E3 /* GameViewController.swift */,
-				8C9D4A7F2D044311008E30E3 /* Main.storyboard */,
-				8C9D4A822D044313008E30E3 /* Assets.xcassets */,
-				8C9D4A842D044313008E30E3 /* LaunchScreen.storyboard */,
+				8C9D4A952D0450E1008E30E3 /* CustomNodes */,
+				8C9D4A942D044A31008E30E3 /* TileSets */,
+				8C9D4A932D0449FB008E30E3 /* UI */,
+				8C9D4A922D0449E7008E30E3 /* Scene */,
+				8C9D4A912D0449D9008E30E3 /* ViewController */,
+				8C9D4A902D0449D0008E30E3 /* Template */,
 			);
 			path = AngryBirdsClone;
+			sourceTree = "<group>";
+		};
+		8C9D4A902D0449D0008E30E3 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A8C2D04433A008E30E3 /* Info.plist */,
+				8C9D4A752D044311008E30E3 /* AppDelegate.swift */,
+				8C9D4A982D045B5C008E30E3 /* Configuration.swift */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		8C9D4A912D0449D9008E30E3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A7D2D044311008E30E3 /* GameViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8C9D4A922D0449E7008E30E3 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A7B2D044311008E30E3 /* GameScene.swift */,
+				8C9D4A772D044311008E30E3 /* GameScene.sks */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		8C9D4A932D0449FB008E30E3 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A7F2D044311008E30E3 /* Main.storyboard */,
+				8C9D4A842D044313008E30E3 /* LaunchScreen.storyboard */,
+				8C9D4A822D044313008E30E3 /* Assets.xcassets */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8C9D4A942D044A31008E30E3 /* TileSets */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A8D2D044638008E30E3 /* BirdTileSet.sks */,
+			);
+			path = TileSets;
+			sourceTree = "<group>";
+		};
+		8C9D4A952D0450E1008E30E3 /* CustomNodes */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A962D04510C008E30E3 /* GameCamera.swift */,
+			);
+			path = CustomNodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9D4A8E2D044638008E30E3 /* BirdTileSet.sks in Resources */,
 				8C9D4A782D044311008E30E3 /* GameScene.sks in Resources */,
 				8C9D4A812D044311008E30E3 /* Base in Resources */,
 				8C9D4A832D044313008E30E3 /* Assets.xcassets in Resources */,
@@ -143,7 +201,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C9D4A7C2D044311008E30E3 /* GameScene.swift in Sources */,
+				8C9D4A992D045B5C008E30E3 /* Configuration.swift in Sources */,
 				8C9D4A7E2D044311008E30E3 /* GameViewController.swift in Sources */,
+				8C9D4A972D04510C008E30E3 /* GameCamera.swift in Sources */,
 				8C9D4A762D044311008E30E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,13 +358,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DD3P835Y9D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AngryBirdsClone/Info.plist;
+				INFOPLIST_FILE = AngryBirdsClone/Template/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -332,13 +392,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DD3P835Y9D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AngryBirdsClone/Info.plist;
+				INFOPLIST_FILE = AngryBirdsClone/Template/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
