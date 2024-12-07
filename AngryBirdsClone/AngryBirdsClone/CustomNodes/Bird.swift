@@ -19,7 +19,6 @@ class Bird: SKSpriteNode {
         didSet {
             if flying {
                 physicsBody?.isDynamic = true
-                physicsBody?.affectedByGravity = false
             }
         }
     }

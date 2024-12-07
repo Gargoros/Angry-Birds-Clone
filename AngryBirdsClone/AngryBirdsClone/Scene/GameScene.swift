@@ -8,6 +8,10 @@
 import SpriteKit
 import GameplayKit
 
+enum RoundState {
+    case ready, flying, finished, animating
+}
+
 class GameScene: SKScene {
     //MARK: - Properties
     var mapNode = SKTileMapNode()
@@ -19,12 +23,28 @@ class GameScene: SKScene {
     var maxScale: CGFloat = 0.0
     
     var bird = Bird(birdType: .red)
+    var birds: [Bird] = [
+        Bird(birdType: .red),
+        Bird(birdType: .yellow),
+        Bird(birdType: .gray)
+    ]
     let anchor = SKNode()
+    
+    var roundState = RoundState.ready
     
     //MARK: - Views
     override func didMove(to view: SKView) {
         setupLevel()
         setupGestureRecognizers()
+    }
+    
+    override func didSimulatePhysics() {
+        guard let physicsBody = bird.physicsBody else { return }
+        if roundState == .flying && physicsBody.isResting {
+            gameCamera.setConstraints(with: self, and: mapNode.frame, to: nil)
+            bird.removeFromParent()
+            roundState = .finished
+        }
     }
     
    
@@ -39,6 +59,12 @@ extension GameScene {
         }
         
         addCamera()
+        //MARK: - SCENE PHYSICS
+        let physicsRect = CGRect(x: 0.0, y: mapNode.tileSize.height, width: mapNode.frame.size.width, height: mapNode.frame.size.height - mapNode.tileSize.height)
+        physicsBody = SKPhysicsBody(edgeLoopFrom: physicsRect)
+        physicsBody?.categoryBitMask = PhysicsCategory.edge
+        physicsBody?.contactTestBitMask = PhysicsCategory.bird | PhysicsCategory.block
+        physicsBody?.collisionBitMask = PhysicsCategory.all
         
         anchor.position = CGPoint(x: self.mapNode.frame.midX / 2, y: self.mapNode.frame.midY / 2)
         addChild(anchor)
@@ -63,6 +89,11 @@ extension GameScene {
     }
     //MARK: - BIRD
     private func addBird(){
+        if birds.isEmpty {
+            print("NO MORE BIRDS")
+            return
+        }
+        bird = birds.removeFirst()
         bird.physicsBody = SKPhysicsBody(rectangleOf: bird.size)
         bird.physicsBody?.categoryBitMask = PhysicsCategory.bird
         bird.physicsBody?.contactTestBitMask = PhysicsCategory.all
@@ -71,6 +102,7 @@ extension GameScene {
         bird.position = anchor.position
         addChild(bird)
         constraintToAnchor(active: true)
+        roundState = .ready
     }
     private func constraintToAnchor(active: Bool) {
         if active {
@@ -95,19 +127,14 @@ extension GameScene {
     @objc func pinch(sender: UIPinchGestureRecognizer) {
         guard let view = view else { return }
         if sender.numberOfTouches == 2 {
-            
             let locationInView = sender.location(in: view)
             let location = convertPoint(fromView: locationInView)
-            
             if sender.state == .changed {
                 let convertedScale = 1 / sender.scale
                 let newScale = gameCamera.yScale * convertedScale
-                
                 if newScale < maxScale && newScale > 0.5 {
                     gameCamera.setScale(newScale)
                 }
-                
-                
                 let locationAfterScale = convertPoint(fromView: locationInView)
                 let locationDelta = location - locationAfterScale
                 let newPosition = gameCamera.position + locationDelta
@@ -121,14 +148,29 @@ extension GameScene {
 //MARK: - TOUCHES
 extension GameScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let location = touch.location(in: self)
-            if bird.contains(location) {
-                panRecognizer.isEnabled = false
-                bird.grabbed = true
-                bird.position = location
+        switch roundState {
+        case .ready:
+            if let touch = touches.first {
+                let location = touch.location(in: self)
+                if bird.contains(location) {
+                    panRecognizer.isEnabled = false
+                    bird.grabbed = true
+                    bird.position = location
+                }
             }
+        case .flying: break
+        case .finished:
+            guard let view = view else { return }
+            roundState = .animating
+            let moveCameraBackAction = SKAction.move(to: CGPoint(x: view.bounds.size.width / 2, y: view.bounds.size.height / 2), duration: 2.0)
+            moveCameraBackAction.timingMode = .easeInEaseOut
+            gameCamera.run(moveCameraBackAction, completion: {
+                self.panRecognizer.isEnabled = true
+                self.addBird()
+            })
+        case .animating: break
         }
+        
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
@@ -140,8 +182,10 @@ extension GameScene {
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if bird.grabbed {
+            gameCamera.setConstraints(with: self, and: mapNode.frame, to: bird)
             bird.grabbed = false
             bird.flying = true
+            roundState = .flying
             constraintToAnchor(active: false)
             let dx = anchor.position.x - bird.position.y
             let dy = anchor.position.y - bird.position.y
