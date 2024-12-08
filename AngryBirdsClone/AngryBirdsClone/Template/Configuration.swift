@@ -10,6 +10,8 @@ import CoreGraphics
 struct ZPosition {
     static let background: CGFloat = 0
     static let obstacles: CGFloat = 1
+    static let hubBackground: CGFloat = 10
+    static let hubLabel: CGFloat = 11
 }
 
 struct PhysicsCategory {
