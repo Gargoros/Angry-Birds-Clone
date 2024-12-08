@@ -47,7 +47,6 @@ class Block: SKSpriteNode {
     
     func impact(with force: Int) {
         health -= force
-        print(health)
         if health < 1 {
             removeFromParent()
         } else if health < damageThreshold {
@@ -55,14 +54,4 @@ class Block: SKSpriteNode {
             texture = brokenTexture
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

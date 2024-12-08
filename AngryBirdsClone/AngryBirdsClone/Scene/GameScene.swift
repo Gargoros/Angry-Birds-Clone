@@ -28,6 +28,13 @@ class GameScene: SKScene {
     var bird = Bird(birdType: .red)
     var birds: [Bird] = [Bird]()
     let anchor = SKNode()
+    var enemies = 0 {
+        didSet{
+            if enemies < 1 {
+                print("All Enemies is Hit")
+            }
+        }
+    }
     var level: Int?
     var roundState = RoundState.ready
     
@@ -67,20 +74,25 @@ extension GameScene {
         }
         
         addCamera()
+        
         //MARK: - BLOCKS
         for child in mapNode.children {
             if let child = child as? SKSpriteNode {
                 guard let name = child.name else { continue }
-                if !["wood","stone","glass"].contains(name) { continue }
-                guard let type = BlockType(rawValue: name) else { continue }
-                let block = Block(type: type)
-                block.size = child.size
-                block.position = child.position
-                block.zRotation = child.zRotation
-                block.zPosition = ZPosition.obstacles
-                block.createPhysicsBody()
-                mapNode.addChild(block)
-                child.removeFromParent()
+                switch name {
+                case "wood","stone","glass":
+                    if let block = createBlock(from: child, name: name) {
+                        mapNode.addChild(block)
+                        child.removeFromParent()
+                    }
+                case "orange": 
+                    if let enemy = createEnemy(from: child, name: name) {
+                        mapNode.addChild(enemy)
+                        enemies += 1
+                        child.removeFromParent()
+                    }
+                default: break
+                }
             }
         }
         
@@ -94,7 +106,7 @@ extension GameScene {
         anchor.position = CGPoint(x: mapNode.frame.midX / 2, y: mapNode.frame.midY / 2)
         addChild(anchor)
         
-        
+        addSlingshot()
         addBird()
     }
     //MARK: - CAMERA
@@ -113,10 +125,19 @@ extension GameScene {
         view.addGestureRecognizer(panRecognizer)
         view.addGestureRecognizer(pinchRecognizer)
     }
+    //MARK: - SLINGSHOT
+    private func addSlingshot(){
+        let slingshot = SKSpriteNode(imageNamed: "slingshot")
+        let scaleSize = CGSize(width: 0, height: mapNode.frame.midY / 2 - mapNode.tileSize.height / 2)
+        slingshot.aspectScale(to: scaleSize, width: false, multiplier: 1.0)
+        slingshot.position = CGPoint(x: anchor.position.x, y: mapNode.tileSize.height + slingshot.size.height / 2)
+        slingshot.zPosition = ZPosition.obstacles
+        mapNode.addChild(slingshot)
+    }
     //MARK: - BIRD
     private func addBird(){
         if birds.isEmpty {
-            print("No more birds")
+            print("GameOver")
             return
         }
         bird = birds.removeFirst()
@@ -126,8 +147,9 @@ extension GameScene {
         bird.physicsBody?.collisionBitMask = PhysicsCategory.block | PhysicsCategory.edge
         bird.physicsBody?.isDynamic = false
         bird.position = anchor.position
+        bird.zPosition = ZPosition.bird
         addChild(bird)
-        bird.aspectScale(to: mapNode.tileSize, width: false, multiplier: 1.0)
+        bird.aspectScale(to: mapNode.tileSize, width: true, multiplier: 1.0)
         constraintToAnchor(active: true)
         roundState = .ready
     }
@@ -139,6 +161,28 @@ extension GameScene {
         } else {
             bird.constraints?.removeAll()
         }
+    }
+    //MARK: - BLOCK
+    private func createBlock(from placeholder: SKSpriteNode, name: String) -> Block? {
+        guard let type = BlockType(rawValue: name) else { return nil }
+        let block = Block(type: type)
+        block.size = placeholder.size
+        block.position = placeholder.position
+        block.zRotation = placeholder.zRotation
+        block.zPosition = ZPosition.obstacles
+        block.createPhysicsBody()
+        return block
+    }
+    //MARK: - ENEMY
+    private func createEnemy(from placeholder: SKSpriteNode, name: String) -> Enemy? {
+        guard let type = EnemyType(rawValue: name) else { return nil }
+        let enemy = Enemy(type: type)
+        enemy.size = placeholder.size
+        enemy.position = placeholder.position
+        enemy.zRotation = placeholder.zRotation
+        enemy.zPosition = ZPosition.obstacles
+        enemy.createPhysicsBody()
+        return enemy
     }
 }
 //MARK: - GESTURES
@@ -250,6 +294,17 @@ extension GameScene: SKPhysicsContactDelegate {
             }
         case PhysicsCategory.bird | PhysicsCategory.edge:
             bird.flying = false
+        case PhysicsCategory.bird | PhysicsCategory.enemy:
+            if let enemy = contact.bodyA.node as? Enemy {
+                if enemy.impact(with: Int(contact.collisionImpulse)){
+                    enemies -= 1
+                }
+            }
+            if let enemy = contact.bodyB.node as? Enemy {
+                if enemy.impact(with: Int(contact.collisionImpulse)){
+                    enemies -= 1
+                }
+            }
         default:
             break
         }

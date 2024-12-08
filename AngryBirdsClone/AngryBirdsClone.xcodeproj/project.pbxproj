@@ -22,6 +22,7 @@
 		8C962FFF2D05E2D9007D849A /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C962FFE2D05E2D9007D849A /* AnimationHelper.swift */; };
 		8C9630012D05E721007D849A /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C9630002D05E721007D849A /* Levels.plist */; };
 		8C9630032D05EB59007D849A /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9630022D05EB59007D849A /* LevelData.swift */; };
+		8C9630052D05FA34007D849A /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9630042D05FA34007D849A /* Enemy.swift */; };
 		8C9D4A762D044311008E30E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D4A752D044311008E30E3 /* AppDelegate.swift */; };
 		8C9D4A782D044311008E30E3 /* GameScene_1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C9D4A772D044311008E30E3 /* GameScene_1.sks */; };
 		8C9D4A7C2D044311008E30E3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D4A7B2D044311008E30E3 /* GameScene.swift */; };
@@ -52,6 +53,7 @@
 		8C962FFE2D05E2D9007D849A /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		8C9630002D05E721007D849A /* Levels.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 		8C9630022D05EB59007D849A /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
+		8C9630042D05FA34007D849A /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		8C9D4A722D044311008E30E3 /* AngryBirdsClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngryBirdsClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9D4A752D044311008E30E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C9D4A772D044311008E30E3 /* GameScene_1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_1.sks; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				8C9D4A9A2D0461E0008E30E3 /* Bird.swift */,
 				8C9D4A9C2D049BF4008E30E3 /* Block.swift */,
 				8C962FEA2D05C63C007D849A /* SpriteKitButton.swift */,
+				8C9630042D05FA34007D849A /* Enemy.swift */,
 			);
 			path = CustomNodes;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9630052D05FA34007D849A /* Enemy.swift in Sources */,
 				8C9630032D05EB59007D849A /* LevelData.swift in Sources */,
 				8C9D4A7C2D044311008E30E3 /* GameScene.swift in Sources */,
 				8C962FE52D04E1D5007D849A /* SKNode+Extensions.swift in Sources */,
