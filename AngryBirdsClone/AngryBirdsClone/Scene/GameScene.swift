@@ -87,7 +87,7 @@ extension GameScene {
         physicsBody?.contactTestBitMask = PhysicsCategory.bird | PhysicsCategory.block
         physicsBody?.collisionBitMask = PhysicsCategory.all
         
-        anchor.position = CGPoint(x: mapNode.frame.midX/2, y: mapNode.frame.midY/2)
+        anchor.position = CGPoint(x: mapNode.frame.midX / 2, y: mapNode.frame.midY / 2)
         addChild(anchor)
         
         
@@ -214,7 +214,7 @@ extension GameScene {
             constraintToAnchor(active: false)
             let dx = anchor.position.x - bird.position.x
             let dy = anchor.position.y - bird.position.y
-            let impulse = CGVector(dx: dx, dy: dy)
+            let impulse = CGVector(dx: dx * 2, dy: dy * 2)
             bird.physicsBody?.applyImpulse(impulse)
             bird.isUserInteractionEnabled = false
         }
