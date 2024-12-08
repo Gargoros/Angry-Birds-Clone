@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C962FE52D04E1D5007D849A /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C962FE42D04E1D5007D849A /* SKNode+Extensions.swift */; };
+		8C962FE72D04E3CC007D849A /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C962FE62D04E3CC007D849A /* MenuScene.swift */; };
+		8C962FE92D04E3E1007D849A /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C962FE82D04E3E1007D849A /* LevelScene.swift */; };
+		8C962FEB2D05C63C007D849A /* SpriteKitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C962FEA2D05C63C007D849A /* SpriteKitButton.swift */; };
+		8C962FEE2D05D07F007D849A /* GameScene_2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C962FED2D05D07F007D849A /* GameScene_2.sks */; };
+		8C962FF02D05D088007D849A /* GameScene_3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C962FEF2D05D088007D849A /* GameScene_3.sks */; };
+		8C962FF22D05D090007D849A /* GameScene_4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C962FF12D05D090007D849A /* GameScene_4.sks */; };
+		8C962FF42D05D099007D849A /* GameScene_5.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C962FF32D05D099007D849A /* GameScene_5.sks */; };
+		8C962FF62D05D09E007D849A /* GameScene_6.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C962FF52D05D09E007D849A /* GameScene_6.sks */; };
+		8C962FF82D05D0B6007D849A /* GameScene_7.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C962FF72D05D0B6007D849A /* GameScene_7.sks */; };
+		8C962FFA2D05D0BC007D849A /* GameScene_8.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C962FF92D05D0BC007D849A /* GameScene_8.sks */; };
+		8C962FFC2D05D0C3007D849A /* GameScene_9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C962FFB2D05D0C3007D849A /* GameScene_9.sks */; };
+		8C962FFF2D05E2D9007D849A /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C962FFE2D05E2D9007D849A /* AnimationHelper.swift */; };
+		8C9630012D05E721007D849A /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C9630002D05E721007D849A /* Levels.plist */; };
+		8C9630032D05EB59007D849A /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9630022D05EB59007D849A /* LevelData.swift */; };
+		8C9630052D05FA34007D849A /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9630042D05FA34007D849A /* Enemy.swift */; };
+		8C9630072D06228A007D849A /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9630062D06228A007D849A /* Popup.swift */; };
+		8C9D4A762D044311008E30E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D4A752D044311008E30E3 /* AppDelegate.swift */; };
+		8C9D4A782D044311008E30E3 /* GameScene_1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C9D4A772D044311008E30E3 /* GameScene_1.sks */; };
+		8C9D4A7C2D044311008E30E3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D4A7B2D044311008E30E3 /* GameScene.swift */; };
+		8C9D4A7E2D044311008E30E3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D4A7D2D044311008E30E3 /* GameViewController.swift */; };
+		8C9D4A812D044311008E30E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8C9D4A802D044311008E30E3 /* Base */; };
+		8C9D4A832D044313008E30E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C9D4A822D044313008E30E3 /* Assets.xcassets */; };
+		8C9D4A862D044313008E30E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8C9D4A852D044313008E30E3 /* Base */; };
+		8C9D4A8E2D044638008E30E3 /* BirdTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C9D4A8D2D044638008E30E3 /* BirdTileSet.sks */; };
+		8C9D4A972D04510C008E30E3 /* GameCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D4A962D04510C008E30E3 /* GameCamera.swift */; };
+		8C9D4A992D045B5C008E30E3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D4A982D045B5C008E30E3 /* Configuration.swift */; };
+		8C9D4A9B2D0461E0008E30E3 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D4A9A2D0461E0008E30E3 /* Bird.swift */; };
+		8C9D4A9D2D049BF4008E30E3 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D4A9C2D049BF4008E30E3 /* Block.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8C962FE42D04E1D5007D849A /* SKNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
+		8C962FE62D04E3CC007D849A /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		8C962FE82D04E3E1007D849A /* LevelScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
+		8C962FEA2D05C63C007D849A /* SpriteKitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitButton.swift; sourceTree = "<group>"; };
+		8C962FED2D05D07F007D849A /* GameScene_2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_2.sks; sourceTree = "<group>"; };
+		8C962FEF2D05D088007D849A /* GameScene_3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_3.sks; sourceTree = "<group>"; };
+		8C962FF12D05D090007D849A /* GameScene_4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_4.sks; sourceTree = "<group>"; };
+		8C962FF32D05D099007D849A /* GameScene_5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_5.sks; sourceTree = "<group>"; };
+		8C962FF52D05D09E007D849A /* GameScene_6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_6.sks; sourceTree = "<group>"; };
+		8C962FF72D05D0B6007D849A /* GameScene_7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_7.sks; sourceTree = "<group>"; };
+		8C962FF92D05D0BC007D849A /* GameScene_8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_8.sks; sourceTree = "<group>"; };
+		8C962FFB2D05D0C3007D849A /* GameScene_9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_9.sks; sourceTree = "<group>"; };
+		8C962FFE2D05E2D9007D849A /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
+		8C9630002D05E721007D849A /* Levels.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
+		8C9630022D05EB59007D849A /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
+		8C9630042D05FA34007D849A /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		8C9630062D06228A007D849A /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		8C9D4A722D044311008E30E3 /* AngryBirdsClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngryBirdsClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C9D4A752D044311008E30E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C9D4A772D044311008E30E3 /* GameScene_1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_1.sks; sourceTree = "<group>"; };
+		8C9D4A7B2D044311008E30E3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		8C9D4A7D2D044311008E30E3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8C9D4A802D044311008E30E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8C9D4A822D044313008E30E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C9D4A852D044313008E30E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8C9D4A8C2D04433A008E30E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = AngryBirdsClone/Template/Info.plist; sourceTree = SOURCE_ROOT; };
+		8C9D4A8D2D044638008E30E3 /* BirdTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BirdTileSet.sks; sourceTree = "<group>"; };
+		8C9D4A962D04510C008E30E3 /* GameCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCamera.swift; sourceTree = "<group>"; };
+		8C9D4A982D045B5C008E30E3 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		8C9D4A9A2D0461E0008E30E3 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
+		8C9D4A9C2D049BF4008E30E3 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C9D4A6F2D044311008E30E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C962FE32D04E194007D849A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8C962FE42D04E1D5007D849A /* SKNode+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8C962FEC2D05D006007D849A /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A772D044311008E30E3 /* GameScene_1.sks */,
+				8C962FED2D05D07F007D849A /* GameScene_2.sks */,
+				8C962FEF2D05D088007D849A /* GameScene_3.sks */,
+				8C962FF12D05D090007D849A /* GameScene_4.sks */,
+				8C962FF32D05D099007D849A /* GameScene_5.sks */,
+				8C962FF52D05D09E007D849A /* GameScene_6.sks */,
+				8C962FF72D05D0B6007D849A /* GameScene_7.sks */,
+				8C962FF92D05D0BC007D849A /* GameScene_8.sks */,
+				8C962FFB2D05D0C3007D849A /* GameScene_9.sks */,
+				8C9630002D05E721007D849A /* Levels.plist */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+		8C962FFD2D05E2BE007D849A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8C962FFE2D05E2D9007D849A /* AnimationHelper.swift */,
+				8C9630022D05EB59007D849A /* LevelData.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8C9D4A692D044311008E30E3 = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A742D044311008E30E3 /* AngryBirdsClone */,
+				8C9D4A732D044311008E30E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C9D4A732D044311008E30E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A722D044311008E30E3 /* AngryBirdsClone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C9D4A742D044311008E30E3 /* AngryBirdsClone */ = {
+			isa = PBXGroup;
+			children = (
+				8C962FFD2D05E2BE007D849A /* Helpers */,
+				8C962FEC2D05D006007D849A /* Levels */,
+				8C962FE32D04E194007D849A /* Extensions */,
+				8C9D4A952D0450E1008E30E3 /* CustomNodes */,
+				8C9D4A942D044A31008E30E3 /* TileSets */,
+				8C9D4A932D0449FB008E30E3 /* UI */,
+				8C9D4A922D0449E7008E30E3 /* Scene */,
+				8C9D4A912D0449D9008E30E3 /* ViewController */,
+				8C9D4A902D0449D0008E30E3 /* Template */,
+			);
+			path = AngryBirdsClone;
+			sourceTree = "<group>";
+		};
+		8C9D4A902D0449D0008E30E3 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A8C2D04433A008E30E3 /* Info.plist */,
+				8C9D4A752D044311008E30E3 /* AppDelegate.swift */,
+				8C9D4A982D045B5C008E30E3 /* Configuration.swift */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		8C9D4A912D0449D9008E30E3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A7D2D044311008E30E3 /* GameViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8C9D4A922D0449E7008E30E3 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A7B2D044311008E30E3 /* GameScene.swift */,
+				8C962FE62D04E3CC007D849A /* MenuScene.swift */,
+				8C962FE82D04E3E1007D849A /* LevelScene.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		8C9D4A932D0449FB008E30E3 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A7F2D044311008E30E3 /* Main.storyboard */,
+				8C9D4A842D044313008E30E3 /* LaunchScreen.storyboard */,
+				8C9D4A822D044313008E30E3 /* Assets.xcassets */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8C9D4A942D044A31008E30E3 /* TileSets */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A8D2D044638008E30E3 /* BirdTileSet.sks */,
+			);
+			path = TileSets;
+			sourceTree = "<group>";
+		};
+		8C9D4A952D0450E1008E30E3 /* CustomNodes */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D4A962D04510C008E30E3 /* GameCamera.swift */,
+				8C9D4A9A2D0461E0008E30E3 /* Bird.swift */,
+				8C9D4A9C2D049BF4008E30E3 /* Block.swift */,
+				8C962FEA2D05C63C007D849A /* SpriteKitButton.swift */,
+				8C9630042D05FA34007D849A /* Enemy.swift */,
+				8C9630062D06228A007D849A /* Popup.swift */,
+			);
+			path = CustomNodes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C9D4A712D044311008E30E3 /* AngryBirdsClone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C9D4A892D044313008E30E3 /* Build configuration list for PBXNativeTarget "AngryBirdsClone" */;
+			buildPhases = (
+				8C9D4A6E2D044311008E30E3 /* Sources */,
+				8C9D4A6F2D044311008E30E3 /* Frameworks */,
+				8C9D4A702D044311008E30E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AngryBirdsClone;
+			productName = AngryBirdsClone;
+			productReference = 8C9D4A722D044311008E30E3 /* AngryBirdsClone.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C9D4A6A2D044311008E30E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					8C9D4A712D044311008E30E3 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 8C9D4A6D2D044311008E30E3 /* Build configuration list for PBXProject "AngryBirdsClone" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8C9D4A692D044311008E30E3;
+			productRefGroup = 8C9D4A732D044311008E30E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C9D4A712D044311008E30E3 /* AngryBirdsClone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8C9D4A702D044311008E30E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C9D4A8E2D044638008E30E3 /* BirdTileSet.sks in Resources */,
+				8C962FF22D05D090007D849A /* GameScene_4.sks in Resources */,
+				8C9D4A782D044311008E30E3 /* GameScene_1.sks in Resources */,
+				8C962FF62D05D09E007D849A /* GameScene_6.sks in Resources */,
+				8C962FF42D05D099007D849A /* GameScene_5.sks in Resources */,
+				8C962FF82D05D0B6007D849A /* GameScene_7.sks in Resources */,
+				8C962FF02D05D088007D849A /* GameScene_3.sks in Resources */,
+				8C9D4A812D044311008E30E3 /* Base in Resources */,
+				8C962FFC2D05D0C3007D849A /* GameScene_9.sks in Resources */,
+				8C962FEE2D05D07F007D849A /* GameScene_2.sks in Resources */,
+				8C962FFA2D05D0BC007D849A /* GameScene_8.sks in Resources */,
+				8C9630012D05E721007D849A /* Levels.plist in Resources */,
+				8C9D4A832D044313008E30E3 /* Assets.xcassets in Resources */,
+				8C9D4A862D044313008E30E3 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C9D4A6E2D044311008E30E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C9630052D05FA34007D849A /* Enemy.swift in Sources */,
+				8C9630032D05EB59007D849A /* LevelData.swift in Sources */,
+				8C9D4A7C2D044311008E30E3 /* GameScene.swift in Sources */,
+				8C962FE52D04E1D5007D849A /* SKNode+Extensions.swift in Sources */,
+				8C9D4A9D2D049BF4008E30E3 /* Block.swift in Sources */,
+				8C962FE72D04E3CC007D849A /* MenuScene.swift in Sources */,
+				8C962FEB2D05C63C007D849A /* SpriteKitButton.swift in Sources */,
+				8C9D4A992D045B5C008E30E3 /* Configuration.swift in Sources */,
+				8C9D4A7E2D044311008E30E3 /* GameViewController.swift in Sources */,
+				8C9D4A972D04510C008E30E3 /* GameCamera.swift in Sources */,
+				8C962FFF2D05E2D9007D849A /* AnimationHelper.swift in Sources */,
+				8C9D4A9B2D0461E0008E30E3 /* Bird.swift in Sources */,
+				8C9630072D06228A007D849A /* Popup.swift in Sources */,
+				8C9D4A762D044311008E30E3 /* AppDelegate.swift in Sources */,
+				8C962FE92D04E3E1007D849A /* LevelScene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8C9D4A7F2D044311008E30E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C9D4A802D044311008E30E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8C9D4A842D044313008E30E3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C9D4A852D044313008E30E3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8C9D4A872D044313008E30E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8C9D4A882D044313008E30E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8C9D4A8A2D044313008E30E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DD3P835Y9D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AngryBirdsClone/Template/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aldnur.AngryBirdsClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8C9D4A8B2D044313008E30E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DD3P835Y9D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AngryBirdsClone/Template/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aldnur.AngryBirdsClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C9D4A6D2D044311008E30E3 /* Build configuration list for PBXProject "AngryBirdsClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C9D4A872D044313008E30E3 /* Debug */,
+				8C9D4A882D044313008E30E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C9D4A892D044313008E30E3 /* Build configuration list for PBXNativeTarget "AngryBirdsClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C9D4A8A2D044313008E30E3 /* Debug */,
+				8C9D4A8B2D044313008E30E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C9D4A6A2D044311008E30E3 /* Project object */;
+}
