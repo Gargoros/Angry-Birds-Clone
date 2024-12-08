@@ -9,7 +9,7 @@ import SpriteKit
 import GameplayKit
 
 enum RoundState {
-    case ready, flying, finished, animating
+    case ready, flying, finished, animating, gameOver
 }
 
 class GameScene: SKScene {
@@ -31,7 +31,8 @@ class GameScene: SKScene {
     var enemies = 0 {
         didSet{
             if enemies < 1 {
-                print("All Enemies is Hit")
+                roundState = .gameOver
+                presentPopup(victory: true)
             }
         }
     }
@@ -137,7 +138,8 @@ extension GameScene {
     //MARK: - BIRD
     private func addBird(){
         if birds.isEmpty {
-            print("GameOver")
+            roundState = .gameOver
+            presentPopup(victory: false)
             return
         }
         bird = birds.removeFirst()
@@ -184,6 +186,21 @@ extension GameScene {
         enemy.createPhysicsBody()
         return enemy
     }
+    //MARK: - POPUPS
+    //MARK: - refactor that part
+    private func presentPopup(victory: Bool) {
+        if victory {
+            let popup = Popup(type: 0, size: frame.size)
+            popup.zPosition = ZPosition.hubBackground
+            popup.popupButtonHandlerDelegate = self
+            gameCamera.addChild(popup)
+        } else {
+            let popup = Popup(type: 1, size: frame.size)
+            popup.zPosition = ZPosition.hubBackground
+            popup.popupButtonHandlerDelegate = self
+            gameCamera.addChild(popup)
+        }
+    }
 }
 //MARK: - GESTURES
 extension GameScene {
@@ -229,8 +246,7 @@ extension GameScene {
                     bird.position = location
                 }
             }
-        case .flying:
-            break
+        case .flying: break
         case .finished:
             guard let view = view else { return }
             roundState = .animating
@@ -240,8 +256,8 @@ extension GameScene {
                 self.panRecognizer.isEnabled = true
                 self.addBird()
             })
-        case .animating:
-            break
+        case .animating: break
+        case .gameOver: break
         }
         
     }
@@ -307,6 +323,22 @@ extension GameScene: SKPhysicsContactDelegate {
             }
         default:
             break
+        }
+    }
+}
+
+extension GameScene: PopupButtonHandlerDelegate {
+    func menuTapped() {
+        sceneManagerDelegate?.presentLevelScene()
+    }
+    func nextTapped() {
+        if let level = level {
+            sceneManagerDelegate?.presentGameSceneFor(level: level + 1)
+        }
+    }
+    func retryTapped() {
+        if let level = level {
+            sceneManagerDelegate?.presentGameSceneFor(level: level)
         }
     }
 }
